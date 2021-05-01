@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html id="widgetResults">
+<head>
+  <title>Wolfram|Alpha Results</title>
+    <!--<link rel="Shortcut Icon" href="//wolframcdn.com/alphaFav.ico" />
+    <link rel="icon" href="//wolframcdn.com/alphaFav.png" type="image/png" />-->
+    <link rel="stylesheet" type="text/css" href="/css/widgetResults.css" />
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/widgetResultsIE7.css" /><![endif]-->
+    <!--[if IE 6]><style type="text/css">a.source { font-size:10px;font-family: Verdana,Arial;text-decoration: none !important; } </style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="/css/widgetResultsSplat.css" />
+    
+</head>
+
+<body class="">
+
+
+<div id="content">
+	
+<div id="pod_0100" class="pod  ">
+
+<hr class="top" />
+  
+
+
+
+
+   <h2>
+      Input interpretation<span class="colon">:</span>
+    </h2>
+
+
+
+	
+		
+		    <ul class="h">
+		
+
+		
+		
+		
+
+
+		
+		    </ul>
+		
+        
+	
+	
+
+
+
+
+
+
+
+	
+  
+    
+
+    
+
+
+
+
+	
+        
+	    
+	      
+	    
+	    
+                
+
+
+
+
+
+
+
+
+
+
+
+<div id="subpod_0100_1" class="sub ">
+
+	
+<div class="output pnt" id="scannerresult_0100_1">
+
+	
+	
+	
+	
+		
+		<img height="19." width="92." src="https://www5a.wolframalpha.com/Calculate/MSP/MSP148523c5c17f2ihh001900002448b2i6ab3ie7h2?MSPStoreType=image/gif&s=54&amp;w=92.&amp;h=19." id="i_0100_1" alt="(script capital l)_t[sin(5 t)](s)" title="(script capital l)_t[sin(5 t)](s)"   data-attribution="" />
+	
+
+
+	
+
+	
+
+	</div>
+
+	<div class="annotpod">
+	
+	</div>
+	</div>
+
+        
+	    
+        
+    
+  
+
+<hr class="bot" />
+
+
+</div>
+
+
+
+
+<div id="pod_0200" class="pod  ">
+
+<hr class="top" />
+  
+
+
+
+
+    <h2>
+      Result<span class="colon">:</span>
+    </h2>
+
+
+
+	
+		
+
+		
+		
+		
+
+
+		
+        
+	
+	
+
+
+
+
+
+
+
+	
+  
+    
+
+    
+
+
+
+
+	
+        
+	    
+	      
+	    
+	    
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="subpod_0200_1" class="sub ">
+
+	
+<div class="output pnt" id="scannerresult_0200_1">
+
+	
+	
+	
+	
+		
+		<img height="39." width="51." src="https://www5a.wolframalpha.com/Calculate/MSP/MSP148923c5c17f2ihh001900001i0dgh6h0ed72e2a?MSPStoreType=image/gif&s=54&amp;w=51.&amp;h=39." id="i_0200_1" alt="5\/(s^2 + 25)" title="5/(s^2 + 25)"   data-attribution="" />
+	
+
+
+	
+
+	
+
+	</div>
+
+	<div class="annotpod">
+	
+	</div>
+	</div>
+
+        
+	    
+        
+    
+  
+
+<hr class="bot" />
+
+
+</div>
+
+
+
+
+
+	
+	
+</div>
+
+  
+
+
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="widgets.js"></script>
+  <!--[if IE]><script type="text/javascript" src="widgets-ie.js"></script><![endif]-->
+ 
+  <script type="text/javascript">
+    document.domain = "wolframalpha.com";
+    var context = window;
+    var jsonArray = {"popups":{}, "imgs":{}};
+    var server = 'https://www5a.wolframalpha.com';
+    var escapedInput = encodeURIComponent("LaplaceTransform[Sin 5t,t,s]");
+    var popupCSS = "/Calculate/css/popup.layout.css";
+
+    var type = "";
+
+//Assumption handler
+function applyAssumption(trackingnumber, assumption) {
+    document.getElementById('a' + trackingnumber).value = unescape(assumption);
+    
+    assumptionSubmit();
+}
+
+function assumptionSubmit() {
+    var assumptions = $("#calculateAssum").serialize();
+    assumptions = assumptions.replace(/a=/g, "assumption=");
+    assumptions = assumptions.replace(/f=/g, "assumption=");
+    
+    var url = window.location.href;
+    url = url.replace(/assumption=.*?(&|$)/g, "");
+    
+    if (url.lastIndexOf("#") == (url.length - 1)) {
+        url = url.substring(0, url.length - 1);
+    }
+    
+    $("#calculateAssum")
+        .attr("action", url + "&" + assumptions)
+        .unbind()
+        .submit();
+}
+
+$(document).ready(function() {
+    $("#calculateAssum", document).submit(function(){assumptionSubmit();});
+    
+    $("#calculateAssum input", document)
+        .filter("[name^='f']")
+        .focus(function(e) {
+            $("#equal"+this.name.substring(1)).css("left","auto");
+            $("[id^='equal']").filter("[id!='equal"+this.name.substring(1)+"']").css("left","-10000px");
+            $("#calculateAssum .warn").html("");
+        })
+        .keyup(function(e) {
+            $("#"+this.name).val("*F."+this.alt+"-_"+this.value);
+            if (e.which == 13) { $("#calculateAssum").submit(); }
+        });
+        
+    $("#calculateAssum input",document)
+        .filter("[id='equal']")
+        .focus(function() { $(this).show(); });
+    $('body',document).click(function(e) {
+            if( $(e.target).is("a[id^=substitute_]") & e.target.id != "mathsource"){
+                if($(e.target).text() == 'Play notes' | $(e.target).text() == 'Play chord' | $(e.target).text() == 'Play sound') {
+                    e.preventDefault();
+                    playSound($(e.target));
+                    return;
+                }
+            var podID = $(e.target).closest('.sub,.pod').attr('id');
+            var podNumber = podID.indexOf('sub')==-1 ? podID.substring(4):podID.substring(7);
+            var index = $(e.target).parents('.pod').find('a').index(e.target);
+            var url = $(e.target).attr('href');
+
+            e.preventDefault();
+            asynchronousPod(url, podID, escapedInput,0,0);
+        } else if( $(e.target).is(".h .menu > li a") ){
+            var podID = $(e.target).closest('.sub,.pod').attr('id');
+            var podNumber = podID.indexOf('sub')==-1 ? podID.substring(4):podID.substring(7);
+            var index = $(e.target).closest('.pod').find('a').index(e.target);
+      
+            changeSelection(index);
+            e.preventDefault();
+            var url = $(e.target).attr('href');
+            asynchronousPod(url, podID, escapedInput,0,0);
+        } 
+    });
+    $('body',document).change(function(e) {
+        if( $(e.target).is("select[id^=substituteValue_]")){
+            var podID = $(e.target).closest('.sub,.pod').attr('id');
+            var podNumber = podID.indexOf('sub')==-1 ? podID.substring(4):podID.substring(7);
+            var selectedIndex = $(e.target)[0].selectedIndex;
+            var url = $(e.target)[0][selectedIndex].value;
+            asynchronousPod(url, podID, escapedInput, 0, 0);
+        }
+    });
+
+  
+
+});
+</script>
+
+  <script type="text/javascript">
+   
+  </script>
+
+	
+<script type="text/javascript">
+  $('li:contains("Step‐by‐step")').remove();
+</script>
+</body> 
+</html>
+

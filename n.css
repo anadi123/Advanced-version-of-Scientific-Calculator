@@ -1,0 +1,27 @@
+body
+{
+background-color:brown;
+border:7px solid #06425c;
+}
+@media only screen and(min-width:1024px)
+{
+	body 
+	{
+		background-color:pink;
+	}
+}
+@media only screen and (min-width:900px)
+{
+	body
+	{
+		background-color:yellow;
+	}
+}
+@media only screen and (min-width:780px)
+{
+	body
+	{
+		background-color:blue;
+	}
+}
+

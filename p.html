@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Fourier series</title>
+  
+  
+  
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Open Sans;
+  font-size: 12px;
+  color: orange;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  background: #222;
+}
+h3 {
+  margin: 0 0 3px 1px;
+}
+p {
+  color: #555;
+  width: 512px;
+}
+p a {
+  color: #555;
+}
+canvas {
+  background: black;
+}
+span {
+  width: 80px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+form,
+label {
+  display: inline-block;
+}
+input[type="range"] {
+  margin: 0;
+  padding: 0;
+  width: 432px;
+  display: inline;
+  vertical-align: middle;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div>
+		<h3>Fourier series</h3>
+		<canvas width="512" height="256"></canvas>
+		<div>
+				<span>Frequency</span>
+				<input frequency type="range" min="-4" max="-3" value="-3.5" step="0.0001">
+		</div>
+		<div>
+				<span>Order</span>
+				<input order type="range" min="0" max="16" value="4" step="1">
+		</div>
+		<div>
+				<span>Waveform</span>
+				<form id="waveform">
+						<label>Square
+								<input type="radio" name="waveform" value="square" checked>
+						</label>
+						<label>Sawtooth
+								<input type="radio" name="waveform" value="sawtooth">
+						</label>
+				</form>
+		</div>
+	<p>I just made it interactive. However it nicely demonstrates the fundamental principle of any fourier series. You can approximate any waveform by adding sinus functions, here represented by circles. This is the original <a href="https://commons.wikimedia.org/wiki/File:Fourier_series_square_wave_circles_animation.gif" target="fourier">GIF</a>.</p>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  
+      <script id="rendered-js" >
+var frequencyInput = document.querySelector("input[frequency]");
+var orderInput = document.querySelector("input[order]");
+var waveformInput = document.getElementById("waveform").elements["waveform"];
+var canvas = document.querySelector("canvas");
+var context = canvas.getContext("2d");
+
+var TAU = Math.PI * 2.0;
+var Scale = 64.0;
+var time = 0.0;
+var startTime = new Date().getTime();
+var values = [];
+var valuePointer = 0;
+var x = 128.0,
+y = 128.0;
+
+function fourier(order) {
+  var phase = order * time * TAU;
+  var radius = 4.0 / (order * Math.PI) * Scale;
+  context.beginPath();
+  context.lineWidth = 1.0;
+  context.strokeStyle = "rgba(255,128,32,1.0)";
+  context.arc(x, y, radius, 0, TAU);
+  context.stroke();
+  context.strokeStyle = "rgba(255,255,255,0.4)";
+  context.moveTo(x, y);
+  x += Math.cos(phase) * radius;
+  y += Math.sin(phase) * radius;
+  context.lineTo(x, y);
+  context.stroke();
+};
+
+function connect() {
+  context.beginPath();
+  context.moveTo(x + 0.5, y + 0.5);
+  context.lineTo(256 + 0.5, y + 0.5);
+  context.strokeStyle = "rgba(255,255,32,1.0)";
+  context.stroke();
+};
+
+function drawWave() {
+  values[valuePointer++ & 255] = y;
+  context.beginPath();
+  context.strokeStyle = "rgba(0,255,0,1)";
+  context.moveTo(256 + 0.5, y + 0.5);
+  for (var i = 1; i < 256; ++i) {
+    context.lineTo(256 + i + 0.5, values[valuePointer - i & 255] + 0.5);
+  }
+  context.stroke();
+}
+
+(function frame() {
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+  x = 144.0;
+  y = 128.0;
+  switch (waveformInput.value) {
+    case "square":
+      for (var order = 0; order <= orderInput.value; order++) {
+        fourier((order << 1) + 1);
+      }
+      break;
+    case "sawtooth":
+      for (var order = 1; order <= orderInput.value; order++) {
+        fourier(order << 1);
+      }
+      break;}
+
+  connect();
+  drawWave();
+  var now = new Date().getTime();
+  time += (now - startTime) * Math.pow(10.0, frequencyInput.value);
+  startTime = now;
+  window.requestAnimationFrame(frame);
+})();
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
+

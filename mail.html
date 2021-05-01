@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Advanced Scientific Calculator</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<pre lang="xml"><form action="../" enctype="text/plain">
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+        <input name="customername" size="60"
+            style="background-color: #FFFFCC; text-align: left;" type="text"
+            value="Name" tabindex="1"/>
+        <input name="customernumber" size="60"
+            style="background-color: #FFFFCC; text-align: left; width: 202px; margin-left: 42px;"
+            type="text" value="Tel No." tabindex="2" />
+        <input name="space" size="0" style="width:0px;" value="%0A" tabindex="0" />
+    </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; height: 12px; width: 655px;"> </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">Please use our contact form to make any enquiries.</p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"> </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">Type of enquiry?</p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+        <select id="SelectContactType" name="sendEmailTo" onchange="setAction"
+            tabindex="3">
+            <option value="mailto:sales@fosbern.co.uk?subject=HomeQuery&body=">Sales</option>
+            <option value="mailto:colin@fosbern.co.uk?subject=HomeQuery&body=">Contractor</option>
+            <option value="mailto:pat@fosbern.co.uk?subject=HomeQuery&body=">Technical</option>
+            <option value="mailto:enquiries@fosbern.co.uk?subject=HomeQuery&body=">Other</option>
+        </select>
+    </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"> </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">Your Question...</p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; height: 62px;">
+        <textarea cols="10" rows="3" id="TextArea1" name="textarea" tabindex="4"
+            style="overflow: visible; width: 507px;"></textarea>
+    </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; height: 9px;"> </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; height: 9px;"> </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; height: 9px;"> </p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">Finally, Your Email Address...</p>
+    <p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+        <input name="customeremailaddress" size="60"
+            style="background-color: #FFFFCC" type="text" tabindex="5" />
+        <input
+            type="button"
+            value="Submit"
+            onclick="location.href=this.form.sendEmailTo.options[sendEmailTo.selectedIndex].value + this.form.customername.value + this.form.space.value + this.form.customernumber.value + this.form.space.value + this.form.textarea.value + this.form.space.value + this.form.customeremailaddress.value"
+            tabindex="5"/>
+    </p>
+    <p style="text-align:center">
+        Press the Submit Button and we will contact you shortly with details, prices
+        etc
+    </p>
+    </form>
+	</body>
+	</html>

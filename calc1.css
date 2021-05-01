@@ -1,0 +1,114 @@
+*{
+	padding:0;
+	margin:5%;
+	text-align:center;
+}
+body
+{
+	background-color:blue;
+}
+@media screen and (min-width:1024px)
+{
+	body
+	{
+		background-color:yellow;
+		flex-direction:column;
+	}
+	.calculator
+	{
+		width:30%;
+		height:30%;
+	}
+}
+@media screen and (min-width:900px)
+{
+	body
+	{
+		background-color:grey;
+		flex-direction:column;
+	}
+	.calculator
+	{
+		width:30%;
+		height:30%;
+	}
+}
+@media screen and (min-width:780px)
+{
+	body
+	{
+		background-color:orange;
+		flex-direction:column;
+	}
+	.calculator
+	{
+		width:30%;
+		height:30%;
+		
+	}
+}
+@media screen and (max-width:600px)
+{
+	body
+	{
+		background-color:red;
+		flex-direction:column;
+	}
+	.calculator
+	{
+		width:30%;
+		height:30%;
+	}
+}
+
+.calculator{
+	width:50%;
+	height:20%;
+	background-color:#c0c0c0;
+	box-shadow:0px 0px 0px 10px #666;
+	border:5px solid black;
+	border-radius:10px;
+}
+#display{
+	width:50%;
+	height:10%;
+	text-align:right;
+	background-color:black;
+	border:3px solid white;
+	font-size:18px;
+	left:2px;
+	top:2px;
+	color:#7fff00;
+}
+.bTnTop{
+	color:white;
+	background-color:#6f6f6f;
+	font-size:14px;
+	margin:auto;
+	width:50%;
+	height:25%;
+}
+.bTnNum{
+	color:white;
+	background-color:black;
+	font-size:14px;
+	margin:auto;
+	width:50%;
+	height:25%;
+}
+.bTnMath{
+	color:white;
+	background-color:#ff4561;
+	font-size:14px;
+	margin:auto;
+	width:50%;
+	height:25%;
+}
+.bTnOpps{
+	color:white;
+	background-color:#ff9933;
+	font-size:14px;
+	margin:auto;
+	width:50%;
+	height:25%;
+}

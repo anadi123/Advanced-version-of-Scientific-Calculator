@@ -1,0 +1,647 @@
+<xml version="1.0"  encoding="utf-8" >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Wolfram|Alpha Widget: Laplace Transform Calculator</title>
+<link rel="Shortcut Icon" href="http://wolframcdn.com/alphaFav.ico" />
+<link rel="icon" href="http://wolframcdn.com/alphaFav.png" type="image/png" />
+<link rel="stylesheet" type="text/css" href="http://www.wolframalpha.com/css/widget/base.css" />
+<link rel="stylesheet" type="text/css" href="http://www.wolframalpha.com/css/widget/blue.css" />
+<style type="text/css">
+table#wolframAlphaWidget42413,
+div#wolframAlphaWidget42413{
+  font-family: verdana, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  word-wrap: normal;
+  white-space: auto;
+  color: #000;
+  margin: 12px auto 0;
+  padding: 0;
+  min-width: 140px;
+  background: transparent;
+  border: 0 none;
+ -webkit-text-size-adjust: none;  
+  width: 100%;                    
+}
+
+
+
+#wolframAlphaWidget42413 tr,
+#wolframAlphaWidget42413 tr th,
+#wolframAlphaWidget42413 tr td,
+#wolframAlphaWidget42413 form {
+  position: static;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+
+#wolframAlphaWidget42413 tr th {
+  color: white;
+}
+
+#wolframAlphaWidget42413 table.wolframAlphaWidgetContent td {
+  padding-right: 2px;
+}
+
+#wolframAlphaWidget42413 table.wolframAlphaWidgetContent table.submit td {
+  padding: 0;
+}
+
+#wolframAlphaWidget42413 table,
+#wolframAlphaWidget42413 form,
+#wolframAlphaWidget42413 fieldset,
+#wolframAlphaWidget42413 table.wolframAlphaWidgetContent table.submit {
+  border: 0 none;
+  background: transparent none;
+}
+
+
+/* footer popups / links */
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfo,
+#wolframAlphaWidget42413 .wolframAlphaWidgetShare,
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfo a,
+#wolframAlphaWidget42413 .wolframAlphaWidgetShare a {
+  font-size: 11px;
+  line-height: 17px;
+  color: #555; 
+  text-decoration: none;
+  outline: none;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup a:hover,
+#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup a:hover {
+  color: #ed602f;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup a b,
+#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup a b { 
+  font-weight: normal;
+  color: #ed602f;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup a {
+  font-weight: bold;
+  color: #fe6518;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup a:hover {
+  color: #db0303;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup .wawfp_share {
+  border-bottom: 1px solid #dadada;
+  padding: 7px 0 11px;
+  margin-bottom: 4px;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup .wawfp_share a {
+   font-weight: normal;
+   font-size: 12px;
+}
+
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup .poweredby {
+  font-family: arial, sans-serif;
+  font-size: 10px;
+  color: #555;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup .poweredby a {
+  display: inline;
+  font-size: 10px;
+  font-weight: normal;
+  color: #fe6518;
+}
+
+#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup .poweredby a:hover {
+  color: #db0303;
+}
+
+#wolframAlphaWidget42413 .waWidgetFooter .wawf_rate a, 
+#wolframAlphaWidget42413 .wawf_getstripe a {
+  color: #555;
+  font-family: arial,sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+
+    /* Popup Styles */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    #wolframAlphaWidget42413 .close {
+      display: none;
+    }
+
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+
+    div#wolframAlphaWidget42413 {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    #wolframAlphaWidget42413 .waw_header,
+    #wolframAlphaWidget42413 .waWidgetFooter {
+      width: 100%;
+      margin: 0;
+      min-width: 306px;
+    }
+
+    #wolframAlphaWidget42413 .waw_header {
+      padding: 0 16px;
+    }
+
+    #wolframAlphaWidget42413 .waw_header .l,
+    #wolframAlphaWidget42413 .waw_header .r,
+    #wolframAlphaWidget42413 .waWidgetFooter .l,
+    #wolframAlphaWidget42413 .waWidgetFooter .r {
+      display: none;
+    }
+
+    #wolframAlphaWidget42413 .waWidgetFooter .logo {
+      top: 10px;
+      left: 16px;
+    }
+
+
+    #wolframAlphaWidget42413 .waWidgetFooter .equal {
+      right: 18px;
+    }
+
+    #wolframAlphaWidget42413 .waWidgetFooter .alphaInput {
+      right: 14px;
+    }
+
+    #wolframAlphaWidget42413 .waWidgetFooter .wolframAlphaWidgetShare {
+      right: 35px;
+    }
+
+    #wolframAlphaWidget42413 .waWidgetFooter .wolframAlphaWidgetInfo {
+      right: 55px;
+    }
+
+    </style>
+	</head>
+	<body>
+
+<div class="WolframAlphaWidgetLarge blueWidgetTheme expand" style="position: relative; " id="wolframAlphaWidget42413">
+<div class="waw_header ">
+<div class="l" ></div>Laplace Transform Calculator<div class="r"></div>
+<div class="close"></div>
+</div>
+<div class="wolframAlphaWidgetBody ">
+<form action="http://www.wolframalpha.com/input/" id="wolframAlphaWidgetForm42413">
+<fieldset>
+<table class="wolframAlphaWidgetContent"> 
+<tr> <td>Laplace transform of</td> 
+     <td><input type="text" maxlength="200" id="i0" name="Function" value="Sin 5t" size="20"/></td>
+</tr> 
+<tr> <td>Variable of function:</td> 
+	<td><input type="text" maxlength="200" id="i1" name="t" value="t" size="5"/></td> 
+</tr> 
+<tr> <td>Transform variable:</td> 
+	<td><input type="text" maxlength="200" id="i2" name="s" value="s" size="5"/></td> 
+</tr> 
+<tr> <td align="center" colspan="2"><table class="submit" cellpadding="0" cellspacing="0"><tr><td class="l"></td>
+	<td class="m">Calculate</td>
+	<td class="r"></td>
+</tr>
+</table></td> </tr> </table> 
+<input type="hidden" name="i" id="i" value="" />
+<input type="hidden" name="querytemplate" id="querytemplate" value="LaplaceTransform[${Function},${t},${s}]"/>
+</fieldset>
+</form>
+</div><div class="wolframAlphaWidgetOutput">
+<div  class="wolframAlphaWidgetComputingOverlay" id="wolframAlphaWidgetOverlay42413">
+<div class="wolframAlphaWidgetComputingSpinner">Computing...</div></div>
+<iframe class="wolframAlphaWidgetResults" id="wolframAlphaWidgetResults42413" width="100%" frameborder="0" style="height: 450px; background: transparent;" src=""></iframe></div>
+<div class="waWidgetFooter"><div class="l"></div><div class="r"></div>
+<div class="wawf_rate"><a href="http://www.wolframalpha.com/widgets/gallery/view.jsp?id=122507de3372c73f916a1d07ccb9cf9c" target="_blank">Get this widget</a></div>
+<a href="http://www.wolframalpha.com" class="logo " target="_blank"></a>
+<div class="wolframAlphaWidgetInfo"><div class="wolframAlphaWidgetInfoPopup"><div class="wawfp_top"></div>
+<a class="wawipl_1" href="http://developer.wolframalpha.com/widgetbuilder/" target="_blank">Build your own widget&nbsp;<b>&raquo;</b></a>
+<a class="wawipl_2" href="http://www.wolframalpha.com/widgets/gallery/" target="_blank">Browse widget gallery&nbsp;<b>&raquo;</b></a>
+<a class="wawipl_3" href="http://www.wolframalpha.com/widgets/" target="_blank">Learn more&nbsp;<b>&raquo;</b></a>
+<a class="wawipl_4" href="http://www.wolframalpha.com/widgets/gallery/view.jsp?id=122507de3372c73f916a1d07ccb9cf9c&reportprob=1" target="_blank">Report a problem&nbsp;<b>&raquo;</b></a>
+<span class="poweredby">Powered by <a href="http://www.wolframalpha.com" target="_blank">Wolfram|Alpha</a><br/>
+<a href="http://developer.wolframalpha.com/widgetterms.html" target="_blank">Terms of use</a></span>
+<div class="wawfp_bot"></div></div></div>
+<div class="wolframAlphaWidgetShare"><div class="wolframAlphaWidgetSharePopup"><div class="wawfp_top"></div><p>Share a link to this widget:</p>
+<div class="wawfp_share"><a class="wawfp_fb" href="http://www.facebook.com/share.php?u=http%3a%2f%2fwww.wolframalpha.com%2fwidgets%2fgallery%2fview.jsp%3fid%3d122507de3372c73f916a1d07ccb9cf9c" target="_blank"></a>
+<a class="wawfp_tw" href="http://twitter.com/home?status=http%3a%2f%2fwww.wolframalpha.com%2fwidgets%2fgallery%2fview.jsp%3fid%3d122507de3372c73f916a1d07ccb9cf9c" target="_blank"></a>
+<a class="wawfp_dl" href="http://del.icio.us/post?url=http%3a%2f%2fwww.wolframalpha.com%2fwidgets%2fgallery%2fview.jsp%3fid%3d122507de3372c73f916a1d07ccb9cf9c&title=" target="_blank"></a>
+<a class="wawfp_dg" href="http://digg.com/submit?url=http%3a%2f%2fwww.wolframalpha.com%2fwidgets%2fgallery%2fview.jsp%3fid%3d122507de3372c73f916a1d07ccb9cf9c&phase=2" target="_blank"></a>
+<a class="wawfp_more" href="http://www.wolframalpha.com/widgets/gallery/view.jsp?id=122507de3372c73f916a1d07ccb9cf9c" target="_blank">More</a><br style="clear: both;" /></div>
+<a href="http://www.wolframalpha.com/widgets/gallery/view.jsp?id=122507de3372c73f916a1d07ccb9cf9c" target="_blank">Embed this widget&nbsp;&raquo;</a>
+<div class="wawfp_bot"></div></div></div>
+<div class="alphaInput" style="display: none;" id="widgetFooterInput42413"><div class="left"></div><div class="input"></div>
+<div class="right"></div></div><div id="eq42413" class="equal"></div></div>
+<div class="wolframAlphaWidgetBeta" id="wolframAlphaWidgetBeta42413"></div></div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script><script type="text/javascript">
+<script type="text/javascript" id="WolframAlphaScript122507de3372c73f916a1d07ccb9cf9c" src="//www.wolframalpha.com/widget/widget.jsp?id=122507de3372c73f916a1d07ccb9cf9c"></script>
+if ( typeof(WolframAlphaWidget) !== 'object' || WolframAlphaWidget === null ){
+    var WolframAlphaWidget = {};
+}
+
+WolframAlphaWidget['122507de3372c73f916a1d07ccb9cf9c'] = {
+  'id'       : 42413,
+  'width'    : 625,
+  'height'   : 450,
+  'title'    :'Laplace Transform Calculator',
+  'theme'    :'blue',
+  'output'   :'popupHtml',
+  'popHeight': 663,
+  'rowCount' : 4+0,
+  'podSelectBase' : '\x26includepodid\x3DInput\x26includepodid\x3DResult\x26showAssumptions\x3D1\x26showWarnings\x3D1',
+  'podSelect': '',
+  'initialized' : false
+};
+
+
+WolframAlphaWidget.getInput = function( id ){
+    var txt = jQuery('#wolframAlphaWidgetForm'+id+' input[name="querytemplate"]').val()
+    if ( !txt || txt=='' ){
+        return '';
+    }
+
+    var regex = /\${\w+}/g;
+    var field = txt.match(regex);
+
+    var param = {};
+    var i = '#wolframAlphaWidgetForm'+id;
+    var inputs = jQuery(i+' input:text').add(i+' input:checked').add(i+' select');
+    for ( var i = 0 ; i < inputs.length ; i++ ){ //>
+        var el = jQuery(inputs[i]);
+        var name = el.attr('name');
+        param[name] = el.val();
+    }
+
+    var result = txt;
+    if ( field == null ){ return result; }
+
+    for ( var i = 0 ; i < field.length ; i++ ){//>
+        var f = field[i].slice(2,-1);               //get field name minus id
+        var v = param[f];                           //get field value
+        if ( typeof v == 'undefined' ){
+          v = '';}
+        var regex = new RegExp('\\\${'+f+'}','g');
+        result = result.replace(regex,v);
+    }
+
+    return result;
+}
+
+
+WolframAlphaWidget.getAllInputs = function( id ){
+    var result = '',
+        param = {},
+        i = '#wolframAlphaWidgetForm'+id,
+        inputs = jQuery(i+' input:text').add(i+' input:checked').add(i+' select');
+    
+    for ( var i = 0 ; i < inputs.length ; i++ ){ //>
+        var el = jQuery(inputs[i]);
+        result += '&'+encodeURIComponent('input_'+el.attr('name'))+'='+encodeURIComponent(el.val());
+    }
+    return result;
+}
+
+
+
+WolframAlphaWidget.widthConstrained = function( wuid ){
+    var width = 575;
+    try {
+        width = WolframAlphaWidget[wuid]['width'];
+    }
+    catch(e){}
+    return ( width > document.body.clientWidth );
+}
+
+WolframAlphaWidget.heightConstrained = function( wuid ){
+    var height = 450;
+    try {
+        height = WolframAlphaWidget[wuid]['popHeight'];
+    }
+    catch(e){}
+    return ( height > document.documentElement.clientHeight );
+}
+
+
+WolframAlphaWidget.serializeById = function(wid){
+  var i = '#wolframAlphaWidgetForm'+wid;
+  var result = "";
+  var inputs = jQuery(i+' input:text').add(i+' input:checked').add(i+' input:radio:selected').add(i+' select');
+    for ( var i = 0 ; i < inputs.length ; i++ ){ //>
+        var el = jQuery(inputs[i]);
+        var id = el.attr('id');
+        result += '&'+id+'='+encodeURIComponent( el.val() );
+    }
+  return result;
+}
+
+
+WolframAlphaWidget.loadResultIFrame = function(wid,wuid,input ){
+    var podSelect = '',
+        output    = '';
+    try {
+      podSelect = WolframAlphaWidget[wuid]['podSelect'];
+      output    = WolframAlphaWidget[wuid]['output'];
+    }
+    catch(e){}
+
+    var useOpacity = jQuery.browser.msie; 
+
+    var newSrc = "http://www.wolframalpha.com/widget/input/?input="+encodeURIComponent(input)+"&id="+wuid+podSelect;
+
+    if (window.location.protocol === 'https:'){
+        newSrc = newSrc.replace('http','https');
+    }
+
+    var oldFrame = jQuery("#wolframAlphaWidgetResults"+wid);
+    var newFrame = jQuery('<iframe class="wolframAlphaWidgetResults" id="wolframAlphaWidgetResults'+wid+'" width="100%" frameborder="0" style="background: transparent;" src=""></iframe>');
+
+    newFrame.css( 'height', oldFrame.css('height') );
+
+    if ( useOpacity ){
+        newFrame.css("opacity","0").css('filter:','alpha(opacity=10)');
+        newFrame.load(function(){
+            jQuery(this).css("opacity","1").css('filter:','alpha(opacity=100)');
+        });
+    }
+    oldFrame.replaceWith(newFrame);
+    newFrame.attr('src',newSrc);
+
+    jQuery('#widgetFooterInput'+wid+' .input').text(input); //fill in little input field
+    if ( output == 'lightbox' ){
+        WolframAlphaWidget.sizeLightbox(wid);
+    }
+}
+
+WolframAlphaWidget.popupSubmit = function(wid,wuid,input){
+    var podSelect = '',
+        popWidth  = 575,
+        popHeight = 450,
+        rowCount  = 1,
+        title     = '',
+        theme     = '';
+    try {
+      podSelect = WolframAlphaWidget[wuid]['podSelect'];
+      popWidth  = WolframAlphaWidget[wuid]['width'];
+      popHeight = WolframAlphaWidget[wuid]['popHeight'];
+      rowCount  = WolframAlphaWidget[wuid]['rowCount'];
+      title     = WolframAlphaWidget[wuid]['title'];
+      theme     = WolframAlphaWidget[wuid]['theme'];
+    }
+    catch(e){}
+
+    var url = "http://www.wolframalpha.com/widget/widgetPopup.jsp?p=v&id="+wuid+"&title="+encodeURIComponent(title)+"&theme="+theme+WolframAlphaWidget.serializeById(wid)+"&podSelect="+podSelect;
+
+    var h = Math.min(popHeight,2000);
+    var w = Math.min(popWidth, 2000);
+
+    if (window.navigator.appName == "Microsoft Internet Explorer"){
+        h += 10;
+    }
+    else if ( 'WebkitAppearance' in document.documentElement.style ){
+        h += rowCount * 4;
+    }
+
+    var results = window.open (url,"results","menubar=no,toolbar=no,location=no,scrollbars=yes,resizable=yes,width="+w+",height="+h+"");
+    results.focus();
+    results.blur();
+    results.focus();
+}
+
+function wolframAlphaWidget_Init42413(){
+
+    jQuery("#wolframAlphaWidget42413 .submit").click(function(){ jQuery("#wolframAlphaWidgetForm42413").submit(); });
+
+    jQuery("#wolframAlphaWidgetForm42413").submit(function(e){
+      e.preventDefault();
+      var input = WolframAlphaWidget.getInput( '42413' );
+
+      
+      var widget = WolframAlphaWidget['122507de3372c73f916a1d07ccb9cf9c'];
+      widget['podSelect'] = widget['podSelectBase'];
+
+    
+      WolframAlphaWidget.loadResultIFrame(42413,'122507de3372c73f916a1d07ccb9cf9c', input ); 
+    
+      return false;
+    });
+
+  
+    jQuery("#eq42413").click(function(){
+        var popUrl = "http://www.wolframalpha.com/input/?i="+encodeURIComponent( jQuery("#widgetFooterInput42413 .input").text());
+        if (window.location.protocol === 'https:'){
+            popUlr = popUrl.replace('http','https');
+        } 
+        window.open(popUrl);
+    }).hover(
+        function(){ jQuery("#widgetFooterInput42413").show(); }, 
+        function(){ jQuery("#widgetFooterInput42413").hide(); }  
+    );
+  
+    jQuery("#wolframAlphaWidget42413 .wawipl_4").click(function(e) {
+      if (window.location.href.indexOf("http://www.wolframalpha.com/widgets/") != -1) {
+        reportProblem();
+        return false;
+      }
+    });
+
+  
+    var wolframWidgetIE = 5;
+    var wolframWidgetQuirks = true;
+
+    if (window.navigator.appName == "Microsoft Internet Explorer"){
+      if (document.documentMode){
+          wolframWidgetIE = document.documentMode;
+      }
+      else if (document.compatMode){
+          wolframWidgetIE = ( document.compatMode == "CSS1Compat" ? 7 : 5 );
+      }
+    }
+    else {
+      wolframWidgetIE = false;
+    }
+
+    if ( document.compatMode ){
+      wolframWidgetQuirks = document.compatMode != 'CSS1Compat';
+    }
+
+    //adjustments for quirks mode (most browsers need this)
+    if ( wolframWidgetQuirks ){
+      jQuery("table.WolframAlphaWidget").css('border-collapse','collapse');
+
+      if ( jQuery.browser.mozilla ){
+        jQuery("table.WolframAlphaWidget > tbody > tr:first-child + tr > td.l").css('border-left','2px inset #FFF');
+      }
+      else if ( !wolframWidgetIE ){
+        jQuery("table.WolframAlphaWidget > tbody > tr:first-child + tr > td.r").css('border-right','2px inset #FFF');
+      }
+ 
+      if ( wolframWidgetIE ){ //fix popups
+        jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup").css('width','207px');
+        jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup").css('width','220px').css('right','-45px');
+        
+      }
+
+      //fix for :hover selectors
+      jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetInfo").hover(
+        function(){ jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup").show(); }, 
+        function(){ jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetInfoPopup").hide(); }  
+      );
+      jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetShare").hover(
+        function(){ jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup").show(); }, 
+        function(){ jQuery("#wolframAlphaWidget42413 .wolframAlphaWidgetSharePopup").hide(); }  
+      );
+      
+    }
+    else {
+      if ( wolframWidgetIE == 7 ){
+        jQuery("table.WolframAlphaWidget").css('border-collapse','collapse');
+        jQuery("#wolframAlphaWidgetBeta42413").css('top','-12px');
+      }
+    }
+
+    
+    if ( wolframWidgetIE !== false && wolframWidgetIE <= 6 ){ //ie6 fixes
+      jQuery(".wolframAlphaWidgetContent").attr('align','center');
+      jQuery("#wolframAlphaWidgetOverlay42413").css('height','450').css('margin-left','-1px');
+    }
+    
+
+    //detect cramped container 
+    var wolframWidgetWidth = jQuery("#wolframAlphaWidget42413").width();
+    var wolframInnerWidth  = jQuery("#widget42413 table").eq(0).width() + 2;
+
+    if ( wolframInnerWidth >= wolframWidgetWidth ){
+      jQuery("#wolframAlphaWidget42413").width( wolframWidgetWidth + 32 );
+    }
+
+    
+
+    WolframAlphaWidget['122507de3372c73f916a1d07ccb9cf9c']['initialized'] = true;
+    try{ wolframAlphaWidget_InitDone42413(); }catch(e){} }
+
+    jQuery(function(){
+                wolframAlphaWidget_Init42413();
+
+		
+			var wInput = jQuery("#i0");
+
+			if( wInput.is("input:text") || wInput.is("select") ) {
+				wInput.val('Sin 5t');
+			}
+			if( wInput.is("input:checkbox") ) {
+				wInput.attr('checked','checked');
+			}
+			if( wInput.is("input:radio") ) {
+				jQuery("input[name="+wInput.attr("name")+"]").removeAttr("checked");
+				wInput.attr("checked","true");
+			}
+		  
+			var wInput = jQuery("#i1");
+
+			if( wInput.is("input:text") || wInput.is("select") ) {
+				wInput.val('t');
+			}
+			if( wInput.is("input:checkbox") ) {
+				wInput.attr('checked','checked');
+			}
+			if( wInput.is("input:radio") ) {
+				jQuery("input[name="+wInput.attr("name")+"]").removeAttr("checked");
+				wInput.attr("checked","true");
+			}
+		  
+			var wInput = jQuery("#i2");
+
+			if( wInput.is("input:text") || wInput.is("select") ) {
+				wInput.val('s');
+			}
+			if( wInput.is("input:checkbox") ) {
+				wInput.attr('checked','checked');
+			}
+			if( wInput.is("input:radio") ) {
+				jQuery("input[name="+wInput.attr("name")+"]").removeAttr("checked");
+				wInput.attr("checked","true");
+			}
+		  
+			var wInput = jQuery("#id");
+
+			if( wInput.is("input:text") || wInput.is("select") ) {
+				wInput.val('122507de3372c73f916a1d07ccb9cf9c');
+			}
+			if( wInput.is("input:checkbox") ) {
+				wInput.attr('checked','checked');
+			}
+			if( wInput.is("input:radio") ) {
+				jQuery("input[name="+wInput.attr("name")+"]").removeAttr("checked");
+				wInput.attr("checked","true");
+			}
+		  
+			var wInput = jQuery("#includepodid");
+
+			if( wInput.is("input:text") || wInput.is("select") ) {
+				wInput.val('Input');
+			}
+			if( wInput.is("input:checkbox") ) {
+				wInput.attr('checked','checked');
+			}
+			if( wInput.is("input:radio") ) {
+				jQuery("input[name="+wInput.attr("name")+"]").removeAttr("checked");
+				wInput.attr("checked","true");
+			}
+		  
+
+        jQuery("#wolframAlphaWidget42413 .close").click(function(){
+          window.close();
+        });
+
+        var widgetHeight = 26 + 108 + 79;
+        if (window.navigator.appName == "Microsoft Internet Explorer"){
+            widgetHeight += 10;
+        }
+        if ( 'WebkitAppearance' in document.documentElement.style ){
+          widgetHeight += 16;
+        }
+
+        jQuery(window).resize(function(e) {
+          jQuery("#wolframAlphaWidgetResults42413").height( jQuery(window).height()- widgetHeight );
+        });
+
+        jQuery('#wolframAlphaWidgetForm42413').submit();
+
+        window.resizeBy(0, 1);
+        window.resizeBy(0, -1);
+    });
+  </script><script>
+     $(document).ready(function() {
+        
+        $("body").change(function(e) {
+           var target = $(e.target);
+           if (target.is("select[id^=substituteValue_]")) {
+              var podID = target.closest('.sub,.pod').attr('id');
+              var podNumber = podID.indexOf('sub') == -1 ? podID.substring(4):podID.substring(7);
+              var selected = target.find("option:selected");
+              asynchronousPod("widget/" + selected.val(), podID, escapedInput,0,0);
+           }
+        });
+     });
+  </script></body></html>
+
